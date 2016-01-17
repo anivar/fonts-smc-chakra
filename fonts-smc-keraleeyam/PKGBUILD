@@ -1,0 +1,25 @@
+# Contributor: Aashik S  aashiks at gmail dot com
+# Maintainer: http://smc.org.in
+# Contributor: Akshay S Dinesh asdofindia at gmail dot com
+# Contributor: Anivar Aravind  aanivar dot aravind at gmail dot com
+
+pkgname=fonts-smc-keraleeyam
+pkgver=1.0_beta
+pkgrel=1
+pkgdesc="This is Keraleeyam, a font belonging to a set of TrueType and OpenType fonts released under the GNU General Public License for Malayalam Language. OFL1.1"
+arch=(any)
+url="http://smc.org.in/fonts/"
+license="GPL3"
+depends=(fontconfig xorg-font-utils)
+source=("http://smc.org.in/downloads/fonts/keraleeyam/Keraleeyam.ttf"
+        "https://gitlab.com/smc/keraleeyam/raw/master/67-smc-keraleeyam.conf")
+md5sums=('a0ec523ec5c83dd66ef99b41cc5e5c19'
+         '37d7da81268fa7cf4a9702d241c7ea1c')
+install=$pkgname.install
+
+package() {
+  mkdir -p "${pkgdir}/usr/share/fonts/TTF" || return 1
+  install -m644 *.ttf "${pkgdir}/usr/share/fonts/TTF" 
+  mkdir -p "${pkgdir}/etc/fonts/conf.d" || return 1
+  install *.conf "${pkgdir}/etc/fonts/conf.d" || return 1
+}

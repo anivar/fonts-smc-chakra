@@ -1,0 +1,20 @@
+# Contributor: Aashik S  aashiks at gmail dot com
+# Maintainer: http://smc.org.in
+# Contributor: Akshay S Dinesh asdofindia at gmail dot com
+# Contributor: Anivar Aravind  aanivar dot aravind at gmail dot com
+
+pkgname=fonts-smc
+pkgver=6.1
+pkgrel=1
+pkgdesc="This is a set of TrueType and OpenType fonts released under the GNU General Public License for Malayalam Language."
+arch=(any)
+url="http://smc.org.in/fonts/"
+license="GPL3"
+
+depends=(fonts-smc-anjalioldlipi fonts-smc-chilanka fonts-smc-dyuthi fonts-smc-keraleeyam fonts-smc-meera fonts-smc-rachana 
+fonts-smc-raghumalayalamsans fonts-smc-suruma )
+
+package(){
+return 0
+}
+
